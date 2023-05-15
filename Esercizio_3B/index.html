@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Simulazione Pioggia</title>
+	<style>
+		body {
+			background-color: black;
+			overflow: hidden;
+		}
+		.rain {
+			position: absolute;
+			background-color: white;
+			height: 50px;
+			width: 1px;
+			animation: rain 1s linear infinite;
+		}
+		@keyframes rain {
+			from {
+				transform: translateY(-50px);
+			}
+			to {
+				transform: translateY(100vh);
+			}
+		}
+	</style>
+</head>
+<body>
+	<script src="https://cdn.jsdelivr.net/npm/p5@1.6.0/lib/p5.min.js"></script>
+	<script src="pioggia.js"></script>
+</body>
+</html>
