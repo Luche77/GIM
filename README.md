@@ -19,6 +19,9 @@ Luca Dell'Agostino
 ## Esercizio 2A
 - [Forma e senso](Esercizio_2A/index.html)  
 
+## Esercizio 2B
+- [Forma e senso interattivo](Esercizio_2B/index.html)  
+
 ## Esercizio 3
 - [Pong](Esercizio_3A/index.html)  
 - [Pioggia](Esercizio_3B/index.html)
