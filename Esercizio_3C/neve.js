@@ -10,3 +10,13 @@ function createSnowflake() {
 }
 
 setInterval(createSnowflake, 100);
+
+function createBlizzard() {
+    setInterval(() => {
+        for (let i = 0; i < 50; i++) {
+            createSnowflake();
+        }
+    }, 250);
+}
+
+createBlizzard();
