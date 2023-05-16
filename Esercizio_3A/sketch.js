@@ -14,7 +14,7 @@ function draw() {
 }
 
 function mousePressed() {
-  balls.push(new Ball(mouseX, mouseY, random(40,150), color(random(100, 255), random(100, 255), random(100, 255))));
+  balls.push(new Ball(mouseX, mouseY, random(50,100), color(random(100, 255), random(100, 255), random(100, 255))));
   if (balls.length > 30) {
     balls.shift(); // Rimuove la palla più vecchia se ce ne sono più di 30 in gioco
   }
@@ -26,8 +26,8 @@ class Ball {
     this.y = y;
     this.size = size;
     this.color = color;
-    this.velX = random(5, 10);
-    this.velY = random(5, 10);
+    this.velX = random(-10, 10); // Valori casuali per la direzione sull'asse X
+    this.velY = random(-10, 10); // Valori casuali per la direzione sull'asse Y
   }
 
   update() {
@@ -45,5 +45,11 @@ class Ball {
     noStroke();
     fill(this.color);
     ellipse(this.x, this.y, this.size);
+  }
+}
+
+function keyPressed() {
+  if (key == 's') {
+    saveCanvas('Pong.png');
   }
 }
