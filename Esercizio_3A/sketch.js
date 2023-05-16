@@ -1,40 +1,49 @@
-let posX
-let posY
-let velX
-let velY
+let balls = [];
 
-function setup(){
-	createCanvas(1600, 800)
-	posX = width/2
-	posY = height/2
-	velX = random (10,13)
-	velY = random (10,13)
-	
-	background (255,255,255)
+function setup() {
+  createCanvas(windowWidth, windowHeight);
+  background(0);
 }
 
-function draw(){
-
-	noStroke()
-
-	//fill (map(posX, 0, width, 0, 255), map(posY, 0, height, 0, 255),0 )
-
-	const r = (sin(frameCount * 0.011) + 1) * 150
-	const g = (sin(frameCount * 0.012) + 1) * 50
-	const b = (sin(frameCount * 0.013) + 1) * 200
-	fill(r, g, b)
-
-	ellipse (posX,posY, 300,300)
-
-	posX = posX + velX
-	posY = posY + velY
-
-	if(posX >= width || posX <= 0) velX = - velX
-
-	if(posY >= height || posY <= 0) velY = - velY
+function draw() {
+  background(0, 10); // Crea una "scia" lasciata dalle palle con un basso alpha per un effetto di dissolvenza
+  for (let ball of balls) {
+    ball.update();
+    ball.draw();
+  }
 }
 
-function keyPressed(){
+function mousePressed() {
+  balls.push(new Ball(mouseX, mouseY, random(40,150), color(random(100, 255), random(100, 255), random(100, 255))));
+  if (balls.length > 50) {
+    balls.shift(); // Rimuove la palla più vecchia se ce ne sono più di 50 in gioco
+  }
+}
 
-	save ("pong.png")
+class Ball {
+  constructor(x, y, size, color) {
+    this.x = x;
+    this.y = y;
+    this.size = size;
+    this.color = color;
+    this.velX = random(5, 10);
+    this.velY = random(5, 10);
+  }
+
+  update() {
+    this.x += this.velX;
+    this.y += this.velY;
+    if (this.x + this.size / 2 > width || this.x - this.size / 2 < 0) {
+      this.velX = -this.velX;
+    }
+    if (this.y + this.size / 2 > height || this.y - this.size / 2 < 0) {
+      this.velY = -this.velY;
+    }
+  }
+
+  draw() {
+    noStroke();
+    fill(this.color);
+    ellipse(this.x, this.y, this.size);
+  }
 }
