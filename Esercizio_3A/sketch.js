@@ -15,8 +15,8 @@ function draw() {
 
 function mousePressed() {
   balls.push(new Ball(mouseX, mouseY, random(40,150), color(random(100, 255), random(100, 255), random(100, 255))));
-  if (balls.length > 50) {
-    balls.shift(); // Rimuove la palla più vecchia se ce ne sono più di 50 in gioco
+  if (balls.length > 30) {
+    balls.shift(); // Rimuove la palla più vecchia se ce ne sono più di 30 in gioco
   }
 }
 
