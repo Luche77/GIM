@@ -28,5 +28,5 @@ Luca Dell'Agostino
 - [Neve](Esercizio_3C/index.html)
 
 ## Esercizio 4
-- [Orologio Solare](Esercizio_4/index.html)
+- [Orologio Solare](Esercizio_4/index.html)  
 L'orologio che ho realizzato è un dispositivo unico che utilizza una combinazione di tecnologia e design per rappresentare in modo visivo il colore del cielo, del sole e della luna in base all'ora attuale. Questo orologio è il risultato di un'idea che ho avuto per creare un'esperienza più immersiva e artistica del tempo.
